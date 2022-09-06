@@ -1,0 +1,10 @@
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>輸入代辦事項</mat-label>
+    <input matInput [formControl]="todoText">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-raised-button color="primary" (click)="addTodoItem()" [disabled]="todoText.invalid">新增</button>
+  <button mat-button mat-dialog-close cdkFocusInitial>取消</button>
+</div>

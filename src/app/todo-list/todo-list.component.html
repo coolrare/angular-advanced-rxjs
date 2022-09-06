@@ -1,0 +1,27 @@
+<div class="header">
+  <span class="title">Todo List</span>
+  <button mat-mini-fab color="primary" (click)="displayTodoDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+<app-todo-list-search
+  [suggestList]="suggestList"
+  (keywordChange)="setSuggestList($event)"
+  (searchClick)="search($event)"></app-todo-list-search>
+
+<app-todo-list-table
+  [todoList]="todoList"
+  [pageIndex]="pagination.pageNumber"
+  [pageSize]="pagination.pageSize"
+  [totalCount]="totalCount"
+  (refreshClick)="refresh()"
+  (sortChange)="sortChange($event)"
+  (pageChange)="pageChange($event)"
+  (todoItemStatusChange)="todoItemStatusChange($event)"
+  (todoItemDelete)="todoItemDelete($event)"
+></app-todo-list-table>
+
+<div class="todo-loading" *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</div>

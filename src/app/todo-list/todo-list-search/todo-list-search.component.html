@@ -1,0 +1,10 @@
+<mat-form-field class="keyword-box">
+  <input type="text" placeholder="關鍵字" [formControl]="keywordControl" matInput [matAutocomplete]="autocomplete" />
+
+  <mat-autocomplete #autocomplete="matAutocomplete">
+    <mat-option *ngFor="let item of suggestList" [value]="item">
+      {{ item }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+<button mat-button mat-raised-button color="primary" (click)="search()">搜尋</button>

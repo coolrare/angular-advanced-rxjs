@@ -1,0 +1,8 @@
+:host {
+  display: flex;
+  align-items: center;
+}
+
+.keyword-box{
+  flex: 100%;
+}
